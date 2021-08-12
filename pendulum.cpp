@@ -7,6 +7,10 @@ const double g = 9.81;
 //Time step
 const double dt = 0.02;
 
+const int lengthScale = 100;
+
+const double dampeningFactor = 0.999;
+
 //The second derivative of theta1 with respect to time (angular acceleration)
 double deriv1(double theta1, double theta2, double v1, double v2, double l1, double l2, double m1, double m2)
 {
@@ -65,12 +69,12 @@ void Pendulum::update()
 	aVel2 += (k41 + 2 * k42 + 2 * k43 + k44) / 6.0;
 
 	// Dampening factor
-	aVel1 *= 0.999;
-	aVel2 *= 0.999;
+	aVel1 *= dampeningFactor;
+	aVel2 *= dampeningFactor;
 
 	// Calculate new bob positions
-	double newX1 = pivot.x + l1 * 50 * sin(angle1);
-	double newY1 = pivot.y + l1 * 50 * cos(angle1);
+	double newX1 = pivot.x + l1 * lengthScale * sin(angle1);
+	double newY1 = pivot.y + l1 * lengthScale * cos(angle1);
 
 	sf::Vector2f bob1Pos = sf::Vector2f((float)newX1, (float)newY1);
 
@@ -81,8 +85,8 @@ void Pendulum::update()
 	line1[1].position = bob1Pos;
 
 	// Do the same for the second one
-	double newX2 = newX1 + l2 * 50 * sin(angle2);
-	double newY2 = newY1 + l2 * 50 * cos(angle2);
+	double newX2 = newX1 + l2 * lengthScale * sin(angle2);
+	double newY2 = newY1 + l2 * lengthScale * cos(angle2);
 
 	sf::Vector2f bob2Pos = sf::Vector2f((float)newX2, (float)newY2);
 

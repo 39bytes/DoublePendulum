@@ -12,10 +12,10 @@ void drawPendulum(Pendulum &pendulum, sf::RenderWindow& window)
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(400, 400), "Pendulum simulation");
+    sf::RenderWindow window(sf::VideoMode(600, 600), "Pendulum simulation");
     window.setFramerateLimit(60);
     Pendulum pendulums[1] = {
-        Pendulum(sf::Vector2f(200.0f, 100.0f), 1.5, 1.0, 2.0, 2.0, 1.3, 1.0,
+        Pendulum(sf::Vector2f(300.0f, 200.0f), 1.5, 1.0, 2.0, 2.0, 1.5, 1.0,
         sf::Color::Blue, sf::Color::White, sf::Color::Cyan),
     };
 
