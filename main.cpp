@@ -19,10 +19,6 @@ int main()
     Pendulum pendulums[1] = {
         Pendulum(sf::Vector2f(200.0f, 100.0f), 1.5, 1.0, 2.0, 2.0, 1.3, 1.0,
         sf::Color::Blue, sf::Color::White, sf::Color::Cyan),
-        /*Pendulum(sf::Vector2f(200.0f, 100.0f), 1.5, 1.0, 2.0, 2.0, 1.31, 1.0,
-        sf::Color::Red, sf::Color::White, sf::Color::Magenta),
-        Pendulum(sf::Vector2f(200.0f, 100.0f), 1.5, 1.0, 2.0, 2.0, 1.32, 1.0,
-        sf::Color::Green, sf::Color::White, sf::Color::Yellow),*/
     };
 
     while (window.isOpen())
@@ -35,6 +31,7 @@ int main()
         }
 
         window.clear();
+        // Render each pendulum
         for (auto &pendulum : pendulums)
         {
             pendulum.update();

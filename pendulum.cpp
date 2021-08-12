@@ -95,6 +95,7 @@ void Pendulum::update()
 	trail.insert(trail.begin(), (sf::Vertex(bob2Pos, trailColor)));
 	if (trail.size() > 60)
 	{
+		// Remove old trail points
 		trail.pop_back();
 	}
 }
