@@ -1,7 +1,6 @@
 #include "Pendulum.h"
 #include <math.h>
 #include <utility>
-#include <array>
 
 //Gravity
 const double g = 9.81;

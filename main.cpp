@@ -1,7 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include "pendulum.h"
-#include <array>
 
 void drawPendulum(Pendulum &pendulum, sf::RenderWindow& window)
 {
